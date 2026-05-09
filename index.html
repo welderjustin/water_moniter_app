@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#2196F3">
+    <meta name="description" content="Water Level Monitor for Cistern">
+    <title>Water Monitor</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%232196F3' width='192' height='192'/><text x='96' y='120' font-size='80' fill='white' text-anchor='middle' font-weight='bold'>W</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚰 Water Monitor</h1>
+            <p class="status" id="status">Connecting...</p>
+        </div>
+
+        <div class="card water-card">
+            <div class="card-title">Water Level</div>
+            <div class="water-percentage" id="waterPercentage">--%</div>
+            <div class="water-bar-container">
+                <div class="water-bar" id="waterBar"></div>
+            </div>
+            <div class="card-detail" id="waterDistance">-- cm</div>
+        </div>
+
+        <div class="cards-row">
+            <div class="card">
+                <div class="card-title">🌡️ Temperature</div>
+                <div class="card-value" id="temperature">--°C</div>
+            </div>
+            <div class="card">
+                <div class="card-title">💧 Humidity</div>
+                <div class="card-value" id="humidity">--%</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">Last Update</div>
+            <div class="card-detail" id="lastUpdate">Never</div>
+        </div>
+
+        <div id="alerts" class="alerts-container"></div>
+
+        <button id="notifyBtn" class="btn-notify">Enable Notifications</button>
+
+        <div class="footer">
+            <p>Add to home screen for quick access</p>
+            <p id="version">v1.0.0</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
