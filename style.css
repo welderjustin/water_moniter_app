@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.status {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.status.connected {
+    color: #4CAF50;
+}
+
+.status.error {
+    color: #FF5252;
+}
+
+.card {
+    background: #f5f5f5;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 12px;
+}
+
+.card-title {
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-value {
+    font-size: 40px;
+    font-weight: bold;
+    color: #2196F3;
+}
+
+.card-detail {
+    font-size: 16px;
+    color: #999;
+    margin-top: 8px;
+}
+
+.water-card {
+    background: linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%);
+    border-left: 5px solid #2196F3;
+}
+
+.water-percentage {
+    font-size: 48px;
+    font-weight: bold;
+    color: #1976D2;
+    margin-bottom: 15px;
+}
+
+.water-bar-container {
+    width: 100%;
+    height: 30px;
+    background: #90CAF9;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.water-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #2196F3 0%, #1976D2 100%);
+    border-radius: 15px;
+    transition: width 0.5s ease;
+    width: 0%;
+}
+
+.cards-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 0;
+}
+
+.cards-row .card {
+    margin: 12px 6px;
+}
+
+.alerts-container {
+    padding: 15px 20px;
+}
+
+.alert {
+    background: #FFF3E0;
+    border-left: 4px solid #FF9800;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #E65100;
+}
+
+.alert.critical {
+    background: #FFEBEE;
+    border-left-color: #F44336;
+    color: #B71C1C;
+}
+
+.alert.high {
+    background: #FCE4EC;
+    border-left-color: #E91E63;
+    color: #880E4F;
+}
+
+.btn-notify {
+    background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 20px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.btn-notify:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.btn-notify.enabled {
+    background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+}
+
+.footer {
+    background: #f5f5f5;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eee;
+    font-size: 12px;
+    color: #999;
+}
+
+@media (max-width: 400px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .water-percentage {
+        font-size: 36px;
+    }
+
+    .card-value {
+        font-size: 32px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1a1a1a;
+    }
+
+    .container {
+        background: #2a2a2a;
+        color: #fff;
+    }
+
+    .header {
+        background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+    }
+
+    .card {
+        background: #333;
+        color: #fff;
+    }
+
+    .water-card {
+        background: #1e3a5f;
+    }
+
+    .card-title {
+        color: #aaa;
+    }
+
+    .card-detail {
+        color: #666;
+    }
+
+    .footer {
+        background: #333;
+        border-top-color: #444;
+        color: #666;
+    }
+
+    .alerts-container .alert {
+        background: #3a2a1a;
+        color: #ffb74d;
+    }
+
+    .alerts-container .alert.critical {
+        background: #3a1a1a;
+        color: #ff6b6b;
+    }
+}
