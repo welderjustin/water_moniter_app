@@ -100,11 +100,9 @@ function updateUI(data) {
         humidity.textContent = `${data.humidity_percent}%`;
     }
 
-    // Last update time
-    if (data.timestamp !== undefined) {
-        const time = new Date(data.timestamp).toLocaleTimeString();
-        lastUpdate.textContent = time;
-    }
+    // Last update time - show current time when data is received
+    const time = new Date().toLocaleTimeString();
+    lastUpdate.textContent = time;
 
     // Show alerts if present
     if (data.alert_type) {
